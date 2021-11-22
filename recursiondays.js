@@ -7,7 +7,7 @@ function days(d1, m1, y1, d2, m2, y2) {
 
 	else{
 		if(m1 == 2) {
-			if(y1 % 400 == 0 || (y1 % 100 != 0 && y1 % 4 == 0)) {
+			if(y1 % 400 == 0 || (y1 % 4 == 0 && y1 % 100 != 0)) {
  			count += 29;
 		}
 			else count += 28;
