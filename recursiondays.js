@@ -13,16 +13,14 @@ function days (d1, m1, y1, d2, m2, y2, count = 0) {
 }
 
 function daysInMonth (month, year) {
-  if (month == 2) {
-    if (isLeapYear(year)) {
-      return 29
-    }
-    return 28
-  }
-
-  if (month == 4 || month == 6 || month == 9 || month == 11) return 30
-
-  return 31
+  const monthsWith30Days = [4, 6, 9, 11]
+  return month === 2
+    ? isLeapYear(year)
+      ? 29
+      : 28
+    : monthsWith30Days.includes(month)
+    ? 30
+    : 31
 }
 
 function isLeapYear (year) {
